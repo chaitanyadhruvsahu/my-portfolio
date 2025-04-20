@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chaitanya Dhruv Sahu | Digital Designer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <style>
+    #chat div:hover {
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+    }
+  </style>
+  
+  <style>
+    body {
+      background-image: url('bg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  </style>
+  <style>
+    .fade-in {
+      animation: fadeInUp 0.4s ease-out forwards;
+    }
+  
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+  <style>
+    .fade-wrapper {
+      opacity: 0;
+      transform: scale(0.96) translateY(12px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+  
+    .fade-wrapper.show {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  </style>
+  
+</head>
+<body class="h-full text-white font-sans">
+
+  <!-- Header -->
+  <header class="flex items-center justify-between px-10 py-3 bg-black bg-opacity-60 text-sm">
+    <div class="flex items-center space-x-3 cursor-pointer" onclick="loadMainScreen()">
+      <img src="akira.jpg" alt="Chaitanya Dhruv Sahu" class="w-10 h-10 rounded-full object-cover" />
+      <div>
+        <p class="font-semibold leading-tight">Chaitanya Dhruv Sahu</p>
+        <p class="text-gray-400 text-xs">Digital Designer</p>
+      </div>
+    </div>
+    
+    </div>
+    <div class="flex-grow flex justify-center">
+      <span class="flex items-center px-3 py-1 text-xs text-green-400 bg-green-900 bg-opacity-30 rounded-full">
+        <span class="mr-1 text-green-400 text-base">●</span> Available
+      </span>
+    </div>
+    <div class="text-xs text-gray-400 flex items-center space-x-1">
+      <i data-feather="clock" class="w-4 h-4"></i>
+      <span data-clock>--:--</span>
+
+    </div>
+  </header>
+
+  <!-- Layout -->
+  <div class="flex h-[calc(100vh-56px)]">
+
+    <!-- Left Sidebar -->
+    <aside class="w-28 px-10 py-10 flex flex-col items-center justify-center space-y-6 text-sm">
+      <div class="flex flex-col items-center space-y-1">
+        <a href="javascript:void(0)" onclick="openModal()" class="w-14 h-14 border border-gray-700 rounded flex items-center justify-center text-gray-300 hover:text-white">
+          <i data-feather="monitor" class="w-5 h-5"></i>
+        </a>
+        <span class="text-xs text-gray-300">Services</span>
+      </div>
+      <div class="flex flex-col items-center space-y-1">
+        <a href="javascript:void(0)" onclick="openProjectModal()" class="w-14 h-14 border border-gray-700 rounded flex items-center justify-center text-gray-300 hover:text-white">
+            <i data-feather="folder"></i>
+        </a>
+          
+        <span class="text-xs text-gray-300">Projects</span>
+      </div>
+      <div class="flex flex-col items-center space-y-1">
+        <a href="javascript:void(0)" onclick="openBlogModal()" class="w-14 h-14 border border-gray-700 rounded flex items-center justify-center text-gray-300 hover:text-white">
+          <i data-feather="edit-3"></i>
+        </a>
+        <span class="text-xs text-gray-300">Blog</span>
+      </div>
+      <div class="flex flex-col items-center space-y-1">
+        <a href="javascript:void(0)" onclick="openContact()" class="w-14 h-14 border border-gray-700 rounded flex items-center justify-center text-gray-300 hover:text-white">
+          <i data-feather="phone"></i>
+        </a>
+        <span class="text-xs text-gray-300">Contact</span>
+      </div>
+      <div class="flex flex-col items-center space-y-1">
+        <a href="javascript:void(0)" onclick="openNewsletter()" class="w-14 h-14 border border-gray-700 rounded flex items-center justify-center text-gray-300 hover:text-white">
+          <i data-feather="mail"></i>
+        </a>
+        <span class="text-xs text-gray-300">Newsletter</span>
+      </div>
+    </aside>
+
+    <!-- Main Content (Replaced Dynamically) -->
+    <main class="flex-grow flex justify-center items-center p-6">
+      <div id="mainContent"
+      class="cursor-move bg-black bg-opacity-50 hover:bg-opacity-70 hover:shadow-2xl hover:-translate-y-1 rounded-lg p-6 w-[480px] max-h-[90vh] overflow-y-auto shadow-lg absolute transition-all duration-300 ease-in-out"
+      style="left: 50%; top: 50%; transform: translate(-50%, -50%)">
+    
+          <!-- Profile Section -->
+          <div class="text-center mb-6">
+            <img src="akira.jpg" alt="Chaitanya Dhruv Sahu" class="w-14 h-14 rounded-full mx-auto mb-3" />
+            <div class="text-base font-bold">Chaitanya Dhruv Sahu</div>
+            <div class="text-sm text-gray-400">@chaitanyaasahu</div>
+            <p class="text-sm text-gray-300 mt-2 leading-relaxed">
+              Independent brand designer. Always curious.<br/>
+              Clients → <a href="#" class="text-blue-400">@Fleck</a> · <a href="#" class="text-blue-400">@Nirvana</a> · <a href="#" class="text-blue-400">@Levre</a><br/>
+              Est. 2004 · Noida , UP
+            </p>
+          </div>
+      
+          <!-- Timestamp -->
+          <div class="text-center text-xs text-gray-500 mb-4">20 SUN 14:43 PM</div>
+      
+          <!-- Chat Messages -->
+          <div id="chat" class="flex flex-col space-y-3">
+            <!-- Messages will be injected here -->
+          </div>
+        </div>
+      </main>
+      
+
+    <!-- Right Sidebar -->
+    <aside class="w-28 px-10 py-10 flex flex-col items-center justify-center space-y-6 text-sm">
+        <!-- Tools (Triggers toolsModal with all 4 tools inside) -->
+<div class="flex flex-col items-center space-y-1">
+    <a href="javascript:void(0)" onclick="openToolsModal()" class="w-14 h-14 border border-gray-700 rounded flex items-center justify-center text-gray-300 hover:text-white">
+      <i data-feather="settings" class="w-5 h-5"></i>
+    </a>
+    <span class="text-xs text-gray-300">Tools</span>
+  </div>
+  
+        <div class="flex flex-col items-center space-y-1">
+          <a onclick="openAppModal('Spotify')" class="cursor-pointer w-14 h-14 border border-gray-700 rounded flex items-center justify-center text-gray-300 hover:text-white">
+            <i data-feather="music"></i>
+          </a>
+          <span class="text-xs text-gray-300">Music</span>
+        </div>
+        <div class="flex flex-col items-center space-y-1">
+          <a onclick="openAppModal('YouTube')" class="cursor-pointer w-14 h-14 border border-gray-700 rounded flex items-center justify-center text-gray-300 hover:text-white">
+            <i data-feather="video"></i>
+          </a>
+          <span class="text-xs text-gray-300">Video</span>
+        </div>
+        <div class="flex flex-col items-center space-y-1">
+          <a onclick="openAppModal('Amazon')" class="cursor-pointer w-14 h-14 border border-gray-700 rounded flex items-center justify-center text-gray-300 hover:text-white">
+            <i data-feather="book"></i>
+          </a>
+          <span class="text-xs text-gray-300">Book</span>
+        </div>
+      </aside>
+      
+      
+
+  <!-- Bottom Social Icons -->
+  <div class="fixed bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-4 bg-black bg-opacity-40 px-4 py-2 rounded-lg">
+    <div class="w-10 h-10 flex items-center justify-center border border-gray-700 rounded cursor-pointer" onclick="loadMainScreen()">
+      <i data-feather="home"></i>
+    </div>
+    <div class="w-10 h-10 flex items-center justify-center border border-gray-700 rounded">
+      <a href="https://x.com/chaitanyaa_sahu" target="_blank">
+        <i data-feather="twitter"></i>
+      </a>
+    </div>
+    
+    <div class="w-10 h-10 flex items-center justify-center border border-gray-700 rounded">
+      <a href="https://www.instagram.com/chaitanyaasahu/" target="_blank">
+        <i data-feather="instagram"></i>
+      </a>
+    </div>
+    
+    <div class="w-10 h-10 flex items-center justify-center border border-gray-700 rounded">
+      <a href="https://www.youtube.com/watch?v=GGvyYhCsITo" target="_blank">
+        <i data-feather="youtube"></i>
+      </a>
+    </div>
+    
+    <div class="w-10 h-10 flex items-center justify-center border border-gray-700 rounded">
+      <a href="https://github.com/chaitanyadhruvsahu" target="_blank">
+        <i data-feather="github"></i>
+      </a>
+    </div>
+    
+  </div>
+
+  
+
+  <!-- Footer -->
+  <footer class="absolute bottom-0 left-0 px-6 py-4 text-xs text-gray-500">
+    &copy; 2025 by Chaitanya 
+    
+  </footer>
+  <!-- Projects Modal -->
+<div id="projectModal" class="hidden fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
+    <div class="bg-gray-900 text-white rounded-lg p-6 max-w-2xl w-full relative">
+      <button onclick="closeProjectModal()" class="absolute top-2 right-3 text-gray-400 hover:text-white text-lg">&times;</button>
+      <h3 class="text-lg font-semibold mb-4">Projects</h3>
+      <div class="space-y-4">
+  
+          <!-- Project Item -->
+          <div class="flex items-center justify-between bg-black bg-opacity-40 rounded p-4">
+            <div class="flex items-center space-x-4">
+              <img src="glasses.jpg" alt="Cyberpunk" class="w-16 h-16 object-cover rounded" />
+              <div>
+                <h4 class="font-semibold">Nocti Lens</h4>
+                <p class="text-sm text-gray-400">Object detection solutions tailored for visually impaired individuals.</p>
+                <span class="inline-block mt-1 text-xs bg-gray-700 rounded px-2 py-0.5">Assistive Tech</span>
+              </div>
+            </div>
+            <button onclick="startLoading('Cyberpunk', 'cyberpunk.jpg')" class="text-gray-300 hover:text-white">
+              <i data-feather="arrow-right"></i>
+            </button>
+          </div>
+
+          <!-- Future -->
+          <div class="flex items-center justify-between bg-black bg-opacity-40 rounded p-4">
+            <div class="flex items-center space-x-4">
+              <img src="future.jpg" alt="Future" class="w-16 h-16 object-cover rounded" />
+              <div>
+                <h4 class="font-semibold">Levre Lipcase</h4>
+                <p class="text-sm text-gray-400">Innovative phone cases with integrated lip balm holders.</p>
+                <span class="inline-block mt-1 text-xs bg-gray-700 rounded px-2 py-0.5">Product Design</span>
+              </div>
+            </div>
+            <button onclick="startLoading('Future', 'future.jpg')" class="text-gray-300 hover:text-white">
+              <i data-feather="arrow-right"></i>
+            </button>
+          </div>
+
+          <!-- Neon -->
+          <div class="flex items-center justify-between bg-black bg-opacity-40 rounded p-4">
+            <div class="flex items-center space-x-4">
+              <img src="neon.jpg" alt="Neon Lights" class="w-16 h-16 object-cover rounded" />
+              <div>
+                <h4 class="font-semibold">Morlena Lamp</h4>
+                <p class="text-sm text-gray-400">A beehive-shaped lamp that doubles as a flower vase for cozy spaces.</p>
+                <span class="inline-block mt-1 text-xs bg-gray-700 rounded px-2 py-0.5">Lighting Design</span>
+              </div>
+            </div>
+            <button onclick="startLoading('Neon Lights', 'neon.jpg')" class="text-gray-300 hover:text-white">
+              <i data-feather="arrow-right"></i>
+            </button>
+          </div>
+
+  
+          <!-- Matrix -->
+          <div class="flex items-center justify-between bg-black bg-opacity-40 rounded p-4">
+            <div class="flex items-center space-x-4">
+              <img src="Edusync.jpg" alt="Matrix" class="w-16 h-16 object-cover rounded" />
+              <div>
+                <h4 class="font-semibold">EduSync</h4>
+                <p class="text-sm text-gray-400">A full-stack classroom management platform for schools and colleges.</p>
+                <span class="inline-block mt-1 text-xs bg-gray-700 rounded px-2 py-0.5">EdTech Software</span>
+              </div>
+            </div>
+            <button onclick="startLoading('Matrix', 'matrix.jpg')" class="text-gray-300 hover:text-white">
+              <i data-feather="arrow-right"></i>
+            </button>
+          </div>
+
+  
+      </div>
+      <p class="mt-4 text-center text-xs text-gray-500">4 Projects</p>
+    </div>
+  </div>
+  
+  <!-- Loading Bar -->
+  <div id="loadingOverlay" class="hidden fixed inset-0 flex flex-col items-center justify-center bg-black bg-opacity-80 z-50">
+    <p class="mb-4 text-white text-sm">Loading...</p>
+    <div class="w-40 h-3 bg-gray-800 rounded shadow-inner overflow-hidden">
+      <div id="progressBar" class="h-full bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-1000 ease-linear" style="width: 0%;"></div>
+    </div>
+  </div>
+  
+  <!-- JS Logic -->
+  <script>
+    feather.replace();
+  
+    function openModal() {
+      document.getElementById("serviceModal")?.classList.remove("hidden");
+      document.getElementById("projectModal")?.classList.add("hidden");
+    }
+  
+    function openProjectModal() {
+      document.getElementById("projectModal")?.classList.remove("hidden");
+      document.getElementById("serviceModal")?.classList.add("hidden");
+    }
+  
+    function closeModal() {
+      document.getElementById("serviceModal")?.classList.add("hidden");
+    }
+  
+    function closeProjectModal() {
+      document.getElementById("projectModal")?.classList.add("hidden");
+    }
+  
+    function startLoading(title) {
+  const item = contentMap[title];
+  if (!item) return;
+
+  closeAllModals();
+
+  const overlay = document.getElementById("loadingOverlay");
+  const progressBar = document.getElementById("progressBar");
+  const content = document.getElementById("mainContent");
+
+  overlay.classList.remove("hidden");
+  progressBar.style.width = "0%";
+
+  let progress = 0;
+  const interval = setInterval(() => {
+    progress += 1;
+    progressBar.style.width = `${progress}%`;
+
+    if (progress >= 100) {
+      clearInterval(interval);
+      overlay.classList.add("hidden");
+
+      const isProject = item.type === 'Project';
+      const projectBtn = isProject && item.link
+        ? `<a href="${item.link}" target="_blank" class="mt-4 inline-block bg-white text-black px-4 py-2 rounded text-sm font-semibold hover:bg-gray-200 transition">
+             ${item.redirectText || 'Open Project'}
+           </a>`
+        : '';
+
+      content.innerHTML = `
+        <h2 class="text-sm mb-2 text-gray-400">${item.type}</h2>
+        <div class="bg-black bg-opacity-40 rounded-lg p-4">
+          <h3 class="text-xl font-semibold leading-snug mb-2">${item.title}</h3>
+          <p class="text-sm text-gray-400 mb-4">${item.description}</p>
+          <img src="${item.image}" alt="${item.title}" class="rounded mb-4 w-full object-cover h-52" />
+          <h4 class="text-white font-semibold mb-1">
+            ${item.type === 'Service' ? 'Process' : item.type === 'Post' ? 'Summary' : 'Challenge'}
+          </h4>
+          <p class="text-sm text-gray-300 leading-relaxed">${item.details}</p>
+          ${projectBtn}
+        </div>
+      `;
+
+      feather.replace();
+    }
+  }, 15);
+}
+
+
+  </script>
+  <!-- Blog Modal -->
+<div id="blogModal" class="hidden fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
+    <div class="bg-gray-900 text-white rounded-lg p-6 max-w-2xl w-full relative">
+      <button onclick="closeBlogModal()" class="absolute top-2 right-3 text-gray-400 hover:text-white text-lg">&times;</button>
+      <h3 class="text-lg font-semibold mb-4">Blog</h3>
+      <div class="space-y-4">
+  
+  
+        <!-- Blog 4 -->
+        <div class="flex items-center justify-between bg-black bg-opacity-40 rounded p-4">
+          <div class="flex items-center space-x-4">
+            <img src="nocode.jpg" alt="No Code Tools" class="w-16 h-16 object-cover rounded" />
+            <div>
+              <h4 class="font-semibold">Best No Code Tools 2023</h4>
+              <p class="text-sm text-gray-400">Empowering creativity and innovation.</p>
+              <span class="inline-block mt-1 text-xs bg-gray-700 rounded px-2 py-0.5">Tools</span>
+            </div>
+          </div>
+          <button onclick="startLoading('Best No Code Tools 2023', 'nocode.jpg')" class="text-gray-300 hover:text-white">
+            <i data-feather="arrow-right"></i>
+          </button>
+        </div>
+  
+      </div>
+      <p class="mt-4 text-center text-xs text-gray-500">1 Post</p>
+    </div>
+  </div>
+  <!-- Newsletter Modal --><div id="newsletterModal" class="hidden fixed bottom-24 left-1/2 transform -translate-x-1/2 bg-gray-900 bg-opacity-95 backdrop-blur-md p-6 rounded-lg shadow-xl w-full max-w-md z-50">
+
+    <div class="flex justify-between items-start mb-4">
+      <h3 class="text-sm font-medium text-white">Newsletter</h3>
+      <button onclick="closeNewsletter()" class="text-gray-400 hover:text-white text-lg">&times;</button>
+    </div>
+    <h4 class="text-white text-lg font-semibold">Expert Tips and Insights</h4>
+    <p class="text-sm text-gray-400 mb-4">Gain valuable knowledge and practical advice</p>
+    <div class="flex">
+      <input type="email" placeholder="Your Email" class="w-full bg-black bg-opacity-40 text-white text-sm px-4 py-2 rounded-l border border-gray-600 focus:outline-none" />
+      <button class="bg-white text-black px-4 py-2 rounded-r text-sm font-semibold">Sign Up</button>
+    </div>
+  </div>
+  
+  <!-- Contact Modal -->
+  <div id="contactModal" class="hidden fixed bottom-24 left-1/2 transform -translate-x-1/2 bg-gray-900 bg-opacity-95 backdrop-blur-md p-6 rounded-lg shadow-xl w-full max-w-md z-50">
+
+    <div class="flex justify-between items-start mb-4">
+      <h3 class="text-sm font-medium text-white">Contact</h3>
+      <button onclick="closeContact()" class="text-gray-400 hover:text-white text-lg">&times;</button>
+    </div>
+    <h4 class="text-white text-lg font-semibold mb-2">Let's Get In Touch</h4>
+    <p class="text-sm text-gray-400 mb-4">Feel free to reach out for collaborations or just a friendly hello 👋</p>
+    <div class="space-y-3">
+      <input type="text" placeholder="Your Name" class="w-full bg-black bg-opacity-40 text-white text-sm px-4 py-2 rounded border border-gray-600 focus:outline-none" />
+      <input type="email" placeholder="Your Email" class="w-full bg-black bg-opacity-40 text-white text-sm px-4 py-2 rounded border border-gray-600 focus:outline-none" />
+      <textarea placeholder="Message" rows="3" class="w-full bg-black bg-opacity-40 text-white text-sm px-4 py-2 rounded border border-gray-600 focus:outline-none"></textarea>
+      <button class="bg-white text-black px-4 py-2 rounded text-sm font-semibold">Send Message</button>
+    </div>
+  </div>
+  
+  <!-- Modal -->
+  <div id="serviceModal" class="hidden fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
+    <div class="bg-gray-900 text-white rounded-lg p-6 max-w-2xl w-full relative">
+      <button onclick="closeModal()" class="absolute top-2 right-3 text-gray-400 hover:text-white text-lg">&times;</button>
+      <h3 class="text-lg font-semibold mb-4">Services</h3>
+      <div class="grid grid-cols-2 gap-6">
+        <div onclick="startLoading('UX Design')" class="cursor-pointer bg-black bg-opacity-40 p-4 rounded hover:bg-opacity-60">
+          <i data-feather="layout" class="mb-2"></i>
+          <h4 class="font-semibold">UX Design</h4>
+          <p class="text-sm text-gray-400">Crafting experiences through UX research.</p>
+        </div>
+        <div onclick="startLoading('UI Design')" class="cursor-pointer bg-black bg-opacity-40 p-4 rounded hover:bg-opacity-60">
+          <i data-feather="monitor" class="mb-2"></i>
+          <h4 class="font-semibold">UI Design</h4>
+          <p class="text-sm text-gray-400">Visually engaging user interfaces.</p>
+        </div>
+        <div onclick="startLoading('Web Design')" class="cursor-pointer bg-black bg-opacity-40 p-4 rounded hover:bg-opacity-60">
+          <i data-feather="globe" class="mb-2"></i>
+          <h4 class="font-semibold">Web Design</h4>
+          <p class="text-sm text-gray-400">Responsive & elegant web development.</p>
+        </div>
+        <div onclick="startLoading('No Code')" class="cursor-pointer bg-black bg-opacity-40 p-4 rounded hover:bg-opacity-60">
+          <i data-feather="zap" class="mb-2"></i>
+          <h4 class="font-semibold">No Code</h4>
+          <p class="text-sm text-gray-400">Efficient no-code tools & automation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- App Modal -->
+<div id="appModal" class="hidden fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
+    <div class="bg-[#1f1f27] text-white rounded-lg p-6 w-[360px] relative shadow-lg">
+      <!-- Close Button -->
+      <button onclick="closeAppModal()" class="absolute top-2 right-3 text-gray-400 hover:text-white text-lg">
+        &times;
+      </button>
+  
+      <!-- Title -->
+      <h3 class="text-sm text-gray-400 mb-2" id="appTitle">Tools</h3>
+  
+      <!-- App Info -->
+      <div class="flex items-center space-x-4 mb-4">
+        <img id="appIcon" src="" alt="App Logo" class="w-10 h-10 rounded-md object-contain bg-white p-1" />
+        <div>
+          <p id="appName" class="font-semibold">App Name</p>
+          <p id="appDesc" class="text-sm text-gray-400">App Description</p>
+        </div>
+      </div>
+  
+      <!-- CTA -->
+      <a id="appLink" href="#" target="_blank" class="w-full mt-2 flex justify-center items-center bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded text-sm font-medium transition">
+        <i data-feather="external-link" class="w-4 h-4 mr-2"></i> Open App
+      </a>
+    </div>
+  </div>
+  
+  <!-- Loading Overlay -->
+  <div id="loadingOverlay" class="hidden fixed inset-0 flex flex-col items-center justify-center bg-black bg-opacity-80 z-50">
+    <p class="mb-4 text-white text-sm">Loading...</p>
+    <div class="w-40 h-3 bg-gray-800 rounded shadow-inner overflow-hidden">
+      <div id="progressBar" class="h-full bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-1000 ease-linear" style="width: 0%;"></div>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script>
+    feather.replace()
+
+    function openModal() {
+      document.getElementById("serviceModal").classList.remove("hidden")
+    }
+
+    function closeModal() {
+      document.getElementById("serviceModal").classList.add("hidden")
+    }
+    const contentMap = {
+  'UX Design': {
+    type: 'Service',
+    title: 'UX Design',
+    description: 'Crafting intuitive and user-centered experiences through research and strategy.',
+    image: 'ux.jpg',
+    details: 'Wireframing, usability testing, journey mapping, and prototyping.'
+  },
+  'UI Design': {
+    type: 'Service',
+    title: 'UI Design',
+    description: 'Creating beautiful, responsive, and accessible user interfaces.',
+    image: 'ui.jpg',
+    details: 'Figma, Sketch, Adobe XD.'
+  },
+  'Web Design': {
+    type: 'Service',
+    title: 'Web Design',
+    description: 'Elegant, performant, and SEO-friendly websites built with care.',
+    image: 'web.jpg',
+    details: 'Tailwind, React, Vercel, Framer.'
+  },
+  'No Code': {
+    type: 'Service',
+    title: 'No Code',
+    description: 'Automation, website building, and integrations using no-code tools.',
+    image: 'nocode.jpg',
+    details: 'Webflow, Zapier, Notion, Airtable, Framer.'
+  },
+
+  'Cyberpunk': {
+  type: 'Project',
+  title: 'Nocti Lens',
+  description: 'Object detection solutions tailored for visually impaired individuals.',
+  image: 'glasses.jpg',
+  details: 'Built with accessibility at the core — integrating sensors and intuitive feedback systems.',
+  link: 'https://gamma.app/docs/Copy-of-NoctiLens-Enhancing-Mobility-Safety-jhiiu3juen8vfy9', 
+  redirectText: 'Visit Project' 
+}
+
+,
+'Future': {
+  type: 'Project',
+  title: 'Levre Lipcase',
+  description: 'Innovative phone cases with integrated lip balm holders.',
+  image: 'future.jpg',
+  details: 'Exploring prototyping and user-centric design for everyday convenience and style.',
+  link: 'https://www.instagram.com/levre.in/',
+  redirectText: 'Check it out'
+},
+'Neon Lights': {
+  type: 'Project',
+  title: 'Morlena Lamp',
+  description: 'A beehive-inspired lamp that doubles as a flower vase.',
+  image: 'neon.jpg',
+  details: 'Functional and aesthetic — a warm blend of nature and utility for modern interiors.',
+  link: 'https://drive.google.com/file/d/17unntxhdHTVATv6fJSu4F1b7vvEbTnFp/view?usp=sharing',
+  redirectText: 'Visit Project'
+},
+
+'Matrix': {
+  type: 'Project',
+  title: 'Classroom Software',
+  description: 'A full-stack platform tailored for schools and colleges.',
+  image: 'Edusync.jpg',
+  details: 'Streamlining attendance, content sharing, and assessments for educational institutions.',
+  link: 'https://drive.google.com/file/d/1LeLmHQVLGCgVDUeFPayh6rWjIyRDr9mF/view?usp=sharing',
+  redirectText: 'Visit Project'
+},
+
+
+'Best No Code Tools 2023': {
+    type: 'Post',
+    title: 'Best No Code Tools 2023',
+    description: 'Empowering creativity and innovation.',
+    image: 'nocode.jpg',
+    details: 'Ranking and review of the best tools used in 2023.'
+  }
+}
+
+function startLoading(title) {
+  const item = contentMap[title];
+  if (!item) return;
+
+  closeAllModals();
+
+  const overlay = document.getElementById("loadingOverlay");
+  const progressBar = document.getElementById("progressBar");
+  const content = document.getElementById("mainContent");
+
+  overlay.classList.remove("hidden");
+  progressBar.style.width = "0%";
+
+  let progress = 0;
+  const interval = setInterval(() => {
+    progress += 1;
+    progressBar.style.width = `${progress}%`;
+
+    if (progress >= 100) {
+      clearInterval(interval);
+      overlay.classList.add("hidden");
+
+      // If it's a project, build the button
+      const isProject = item.type === 'Project' && item.link;
+      const buttonHTML = isProject
+        ? `<div class="mt-4 text-center">
+          <a href="${item.link}" target="_blank"
+  class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-sm transition font-medium shadow"
+>
+  ${item.redirectText || 'Open Project'}
+</a>
+
+          </div>`
+        : '';
+
+      content.innerHTML = `
+      <div class="fade-wrapper show">
+        <h2 class="text-sm mb-2 text-gray-400">${item.type}</h2>
+        <div class="bg-black bg-opacity-40 rounded-lg p-4">
+          <h3 class="text-xl font-semibold leading-snug mb-2">${item.title}</h3>
+          <p class="text-sm text-gray-400 mb-4">${item.description}</p>
+          <img src="${item.image}" alt="${item.title}" class="rounded mb-4 w-full object-cover h-52" />
+          <h4 class="text-white font-semibold mb-1">${item.type === 'Service' ? 'Process' : 'Challenge'}</h4>
+          <p class="text-sm text-gray-300 leading-relaxed">${item.details}</p>
+          ${buttonHTML}
+        </div>
+      `;
+
+      feather.replace();
+    }
+  }, 15);
+}
+
+
+    function openBlogModal() {
+  document.getElementById("blogModal").classList.remove("hidden");
+  document.getElementById("serviceModal")?.classList.add("hidden");
+  document.getElementById("projectModal")?.classList.add("hidden");
+}
+
+function closeBlogModal() {
+  document.getElementById("blogModal").classList.add("hidden");
+}
+function openNewsletter() {
+  closeAllModals()
+  document.getElementById("newsletterModal").classList.remove("hidden")
+}
+
+function closeNewsletter() {
+  document.getElementById("newsletterModal").classList.add("hidden")
+}
+
+function openContact() {
+  closeAllModals()
+  document.getElementById("contactModal").classList.remove("hidden")
+}
+
+function closeContact() {
+  document.getElementById("contactModal").classList.add("hidden")
+}
+
+function closeAllModals() {
+  document.querySelectorAll('.z-50').forEach(el => el.classList.add('hidden'))
+}
+
+
+  </script>
+  <script>
+    const dragTarget = document.getElementById('mainContent')
+let isDragging = false
+let offset = { x: 0, y: 0 }
+
+dragTarget.addEventListener('mousedown', (e) => {
+  isDragging = true
+  const computedStyle = window.getComputedStyle(dragTarget)
+  const matrix = new DOMMatrixReadOnly(computedStyle.transform)
+  const left = dragTarget.offsetLeft + matrix.m41
+  const top = dragTarget.offsetTop + matrix.m42
+
+  dragTarget.style.left = `${left}px`
+  dragTarget.style.top = `${top}px`
+  dragTarget.style.transform = 'none'
+
+  offset.x = e.clientX - left
+  offset.y = e.clientY - top
+})
+
+document.addEventListener('mouseup', () => {
+  isDragging = false
+})
+
+document.addEventListener('mousemove', (e) => {
+  if (!isDragging) return
+  dragTarget.style.left = `${e.clientX - offset.x}px`
+  dragTarget.style.top = `${e.clientY - offset.y}px`
+})
+
+  </script>
+
+<!-- Tools Modal -->
+<div id="toolsModal" class="hidden fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
+    <div class="bg-gray-900 text-white rounded-lg p-6 w-full max-w-xl relative">
+      <button onclick="closeToolsModal()" class="absolute top-2 right-3 text-gray-400 hover:text-white text-lg">&times;</button>
+      <h3 class="text-lg font-semibold mb-4">Tools</h3>
+  
+      <div class="grid grid-cols-2 gap-6">
+        <!-- Framer -->
+        <div onclick="openAppModal('Framer')" class="cursor-pointer bg-black bg-opacity-40 p-4 rounded hover:bg-opacity-60">
+          <img src="https://seeklogo.com/images/F/framer-logo-82CEE7BFFF-seeklogo.com.png" alt="Framer" class="w-8 h-8 mb-2" />
+          <h4 class="font-semibold">Framer</h4>
+          <p class="text-sm text-gray-400">Website Builder</p>
+        </div>
+  
+        <!-- Tailwind -->
+        <div onclick="openAppModal('Tailwind')" class="cursor-pointer bg-black bg-opacity-40 p-4 rounded hover:bg-opacity-60">
+          <img src="https://tailwindcss.com/favicons/favicon-32x32.png" alt="Tailwind" class="w-8 h-8 mb-2" />
+          <h4 class="font-semibold">Tailwind CSS</h4>
+          <p class="text-sm text-gray-400">Utility-first CSS</p>
+        </div>
+  
+        <!-- React -->
+        <div onclick="openAppModal('React')" class="cursor-pointer bg-black bg-opacity-40 p-4 rounded hover:bg-opacity-60">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React" class="w-8 h-8 mb-2" />
+          <h4 class="font-semibold">React</h4>
+          <p class="text-sm text-gray-400">JavaScript Library</p>
+        </div>
+  
+        <!-- Vercel -->
+        <div onclick="openAppModal('Vercel')" class="cursor-pointer bg-black bg-opacity-40 p-4 rounded hover:bg-opacity-60">
+          <img src="https://assets.vercel.com/image/upload/front/favicon/vercel/favicon.ico" alt="Vercel" class="w-8 h-8 mb-2" />
+          <h4 class="font-semibold">Vercel</h4>
+          <p class="text-sm text-gray-400">Hosting & Deploy</p>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+  <!-- App Modal -->
+  <div id="toolAppModal" class="hidden fixed right-10 top-24 z-50 bg-gray-900 bg-opacity-90 text-white p-6 rounded-xl shadow-xl w-96 max-w-full">
+    <div class="flex justify-between items-center mb-4">
+      <h2 id="toolModalTitle" class="text-lg font-semibold">App Modal</h2>
+      <button onclick="closeAppModal()" class="text-gray-400 hover:text-white text-xl">&times;</button>
+    </div>
+  
+    <div class="flex items-center gap-3 mb-4">
+      <img id="toolModalIcon" src="" alt="icon" class="w-8 h-8 bg-white rounded" />
+      <div>
+        <div id="toolModalName" class="font-semibold">App Name</div>
+        <div id="toolModalDesc" class="text-sm text-gray-400">App Description</div>
+      </div>
+    </div>
+  
+    <div id="toolModalContent" class="text-sm text-gray-300 space-y-3">
+      <!-- Dynamic embed or image goes here -->
+    </div>
+  
+    <a id="toolModalLink" href="#" target="_blank" class="mt-4 inline-block bg-white text-black px-4 py-2 rounded text-sm font-medium hover:bg-gray-200 transition">
+      Open App
+    </a>
+  </div>
+  
+  
+  <script>
+    function openToolsModal() {
+  closeAllModals?.();
+  document.getElementById("toolsModal").classList.remove("hidden");
+  feather.replace(); // ← this line was missing
+}
+
+
+function closeToolsModal() {
+  document.getElementById("toolsModal").classList.add("hidden")
+}
+
+    const apps = {
+      Framer: {
+        name: 'Framer',
+        description: 'Website Builder',
+        icon: 'https://seeklogo.com/images/F/framer-logo-82CEE7BFFF-seeklogo.com.png',
+        url: 'https://framer.com',
+        embed: null
+      },
+      Tailwind: {
+        name: 'Tailwind CSS',
+        description: 'Utility-first CSS Framework',
+        icon: 'https://tailwindcss.com/favicons/favicon-32x32.png',
+        url: 'https://tailwindcss.com',
+        embed: null
+      },
+      React: {
+        name: 'React',
+        description: 'JavaScript Library',
+        icon: 'https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg',
+        url: 'https://reactjs.org',
+        embed: null
+      },
+      Spotify: {
+  name: 'Blinding Lights – The Weeknd',
+  description: 'One of the most streamed songs of all time.',
+  icon: 'https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg',
+  url: 'https://open.spotify.com/track/0VjIjW4GlUZAMYd2vXMi3b',
+  embed: `
+    <iframe style="border-radius:12px" 
+      src="https://open.spotify.com/embed/track/0VjIjW4GlUZAMYd2vXMi3b?utm_source=generator"
+      width="100%" height="152" frameborder="0" allowfullscreen=""
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy"></iframe>`
+}
+
+,
+
+YouTube: {
+  name: 'Fleeting Moments',
+  description: 'Short film by Chaitanya Sahu',
+  icon: 'https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg',
+  url: 'https://www.youtube.com/watch?v=GGvyYhCsITo',
+  thumbnail: 'https://img.youtube.com/vi/GGvyYhCsITo/hqdefault.jpg',
+  embed: `
+    <iframe width="100%" height="200"
+      src="https://www.youtube.com/embed/GGvyYhCsITo"
+      title="Fleeting Moments - Chaitanya Sahu"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen class="rounded-md"></iframe>`
+}
+
+
+,
+      Amazon: {
+        name: 'Everything is F*cked',
+        description: 'A Book About Hope - Mark Manson',
+        icon: 'https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg',
+        url: 'https://www.amazon.com/dp/0062888468',
+        image: 'https://m.media-amazon.com/images/I/71t4GuxLCuL.jpg'
+      }
+    };
+  
+    function openAppModal(appKey) {
+  const app = apps[appKey];
+  if (!app) return;
+
+  document.getElementById('toolModalTitle').innerText = appKey;
+  document.getElementById('toolModalName').innerText = app.name;
+  document.getElementById('toolModalDesc').innerText = app.description;
+  document.getElementById('toolModalIcon').src = app.icon;
+  document.getElementById('toolModalLink').href = app.url;
+
+  const content = document.getElementById('toolModalContent');
+  content.innerHTML = app.embed
+    ? app.embed
+    : app.image
+    ? `<img src="${app.image}" class="rounded w-full" />`
+    : `<p class="text-gray-400">No preview available. Click to open.</p>`;
+
+  feather.replace();
+  document.getElementById('toolAppModal').classList.remove('hidden');
+}
+
+function closeAppModal() {
+  document.getElementById('toolAppModal').classList.add('hidden');
+}
+
+  </script>
+  
+  
+  <script>
+    const chat = document.getElementById('chat');
+  
+    const messages = [
+    { text: "Hey! I'm Chaitanya, a brand designer based in Noida. How can I help?", sender: 'alexa' },
+    { text: "Can I see your work?", sender: 'user' },
+    { text: "Sure! I mostly work on logos, identities, and marketing collateral.", sender: 'alexa' },
+    {
+      text: `Here's some recent work:<br>
+        <a href="https://daport.notion.site/Filming-Editing-c429ff2f07674f718fd7fad0630a787c?pvs=4" target="_blank">
+          <img src="sharegrid-N10auyEVst8-unsplash - Copy.jpg" class="rounded mt-2" />
+        </a>
+        <div class="text-xs text-gray-400 mt-1">Visual Identity – Filming</div>`,
+      sender: 'alexa'
+    },
+    {
+      text: `<a href="https://daport.notion.site/Graphic-Design-Projects-488739b9509b46b48b81b305c37f1977?pvs=4" target="_blank">
+        <img src="emily-bernal-BM3U_D2lygo-unsplash (1).jpg" class="rounded mt-2" />
+      </a>
+      <div class="text-xs text-gray-400 mt-1">Visual Identity – Graphic Design</div>`,
+      sender: 'alexa'
+    },
+    {
+      text: `<a href="https://gamma.app/docs/Copy-of-NoctiLens-Enhancing-Mobility-Safety-jhiiu3juen8vfy9?mode=doc" target="_blank">
+        <img src="NoctiLens.png" class="rounded mt-2" />
+      </a>
+      <div class="text-xs text-gray-400 mt-1">NoctiLens - Object detection module for blind people</div>`,
+      sender: 'alexa'
+    },
+    { text: "Here's what a few clients have said after working with me", sender: 'alexa' },
+    {
+      text: `<strong>Charlie Smith, Omega CEO</strong><br>
+      I never realized how much our old branding was holding us back until we worked with Alexa. 
+      The new visual identity she created is not just beautiful—it's strategic and effective.`,
+      sender: 'alexa'
+    },
+    {
+      text: `<strong>Samantha Nelson, Delta CMO</strong><br>
+      I loved Alexa's collaborative spirit. She was open to feedback and made the process enjoyable.`,
+      sender: 'alexa'
+    },
+    {
+      text: `<strong>Max Richter, Gamma Co-Founder</strong><br>
+      As a startup, we struggled to find our visual voice until we collaborated with Alexa. 
+      She guided us through the process with patience and insight, resulting in a brand identity that truly resonates with our target audience.`,
+      sender: 'alexa'
+    },
+    { text: "That was just a bit about my work. Anything else you need?", sender: 'alexa' }
+    ];
+
+  
+  
+    messages.forEach((msg, i) => {
+      setTimeout(() => {
+        const div = document.createElement('div');
+        div.className = `text-sm max-w-[80%] px-4 py-2 rounded-xl leading-snug transition-all duration-300 opacity-0 translate-y-2 ${
+          msg.sender === 'alexa' ? 'bg-gray-800 self-start rounded-bl-sm' : 'bg-blue-600 text-white self-end rounded-br-sm'
+        }`;
+        div.innerHTML = msg.text;
+        chat.appendChild(div);
+  
+        setTimeout(() => {
+          div.classList.remove('opacity-0', 'translate-y-2');
+          div.scrollIntoView({ behavior: "smooth", block: "end" });
+        }, 30);
+      }, i * 1400);
+    });
+    function updateClock() {
+  const now = new Date();
+  const options = { weekday: 'short', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+  const formatted = now.toLocaleString('en-US', options);
+  document.querySelectorAll('#liveTime, [data-clock]').forEach(el => el.innerText = formatted);
+}
+setInterval(updateClock, 1000);
+updateClock();
+function loadMainScreen() {
+  const content = document.getElementById("mainContent");
+
+  // Reset content
+  content.innerHTML = `
+    <div class="fade-wrapper show">
+      <div class="text-center mb-6">
+        <img src="akira.jpg" alt="Chaitanya Dhruv Sahu" class="w-14 h-14 rounded-full mx-auto mb-3" />
+        <div class="text-base font-bold">Chaitanya Dhruv Sahu</div>
+        <div class="text-sm text-gray-400">@chaitanyaasahu</div>
+        <p class="text-sm text-gray-300 mt-2 leading-relaxed">
+          Independent brand designer. Always curious.<br/>
+          Clients → <a href="#" class="text-blue-400">@Fleck</a> · <a href="#" class="text-blue-400">@Nirvana</a> · <a href="#" class="text-blue-400">@Levre</a><br/>
+          Est. 2004 · Noida , UP
+        </p>
+      </div>
+      <div class="text-center text-xs text-gray-500 mb-4" id="currentTime"></div>
+      <div id="chat" class="flex flex-col space-y-3"></div>
+    </div>
+  `;
+
+  updateTime();
+  renderChat(); // <--- Ensure THIS is here
+}
+
+
+function renderChat() {
+  const chat = document.getElementById('chat');
+  if (!chat) return;
+
+  const messages = [
+    { text: "Hey! I'm Chaitanya, a brand designer based in Noida. How can I help?", sender: 'alexa' },
+    { text: "Can I see your work?", sender: 'user' },
+    { text: "Sure! I mostly work on logos, identities, and marketing collateral.", sender: 'alexa' },
+    {
+      text: `Here's some recent work:<br>
+        <a href="https://daport.notion.site/Filming-Editing-c429ff2f07674f718fd7fad0630a787c?pvs=4" target="_blank">
+          <img src="sharegrid-N10auyEVst8-unsplash - Copy.jpg" class="rounded mt-2" />
+        </a>
+        <div class="text-xs text-gray-400 mt-1">Visual Identity – Filming</div>`,
+      sender: 'alexa'
+    },
+    {
+      text: `<a href="https://daport.notion.site/Graphic-Design-Projects-488739b9509b46b48b81b305c37f1977?pvs=4" target="_blank">
+        <img src="emily-bernal-BM3U_D2lygo-unsplash (1).jpg" class="rounded mt-2" />
+      </a>
+      <div class="text-xs text-gray-400 mt-1">Visual Identity – Graphic Design</div>`,
+      sender: 'alexa'
+    },
+    {
+      text: `<a href="https://gamma.app/docs/Copy-of-NoctiLens-Enhancing-Mobility-Safety-jhiiu3juen8vfy9?mode=doc" target="_blank">
+        <img src="NoctiLens.png" class="rounded mt-2" />
+      </a>
+      <div class="text-xs text-gray-400 mt-1">NoctiLens - Object detection module for blind people</div>`,
+      sender: 'alexa'
+    },
+    { text: "Here's what a few clients have said after working with me", sender: 'alexa' },
+    {
+      text: `<strong>Charlie Smith, Omega CEO</strong><br>
+      I never realized how much our old branding was holding us back until we worked with Alexa. 
+      The new visual identity she created is not just beautiful—it's strategic and effective.`,
+      sender: 'alexa'
+    },
+    {
+      text: `<strong>Samantha Nelson, Delta CMO</strong><br>
+      I loved Alexa's collaborative spirit. She was open to feedback and made the process enjoyable.`,
+      sender: 'alexa'
+    },
+    {
+      text: `<strong>Max Richter, Gamma Co-Founder</strong><br>
+      As a startup, we struggled to find our visual voice until we collaborated with Alexa. 
+      She guided us through the process with patience and insight, resulting in a brand identity that truly resonates with our target audience.`,
+      sender: 'alexa'
+    },
+    { text: "That was just a bit about my work. Anything else you need?", sender: 'alexa' }
+  ];
+
+  messages.forEach((msg, i) => {
+    setTimeout(() => {
+      const div = document.createElement('div');
+
+      div.className = `
+        text-sm max-w-[80%] px-4 py-2 rounded-xl leading-snug
+        transition-all duration-300 transform opacity-0 translate-y-2
+        ${msg.sender === 'alexa'
+          ? 'bg-gray-800 text-white self-start rounded-bl-sm hover:bg-gray-700'
+          : 'bg-blue-600 text-white self-end rounded-br-sm hover:bg-blue-500'}
+        hover:-translate-y-1 hover:shadow-md
+      `.trim();
+
+      div.innerHTML = msg.text;
+      chat.appendChild(div);
+
+      // Trigger fade + scroll
+      setTimeout(() => {
+        div.classList.remove('opacity-0', 'translate-y-2');
+        div.classList.add('opacity-100', 'translate-y-0');
+        div.scrollIntoView({ behavior: "smooth", block: "end" });
+      }, 30);
+    }, i * 900);
+  });
+}
+
+
+function updateTime() {
+  const now = new Date();
+  const formatted = now.toLocaleString('en-US', {
+    weekday: 'short',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: true,
+    day: 'numeric',
+    month: 'short'
+  });
+  document.getElementById('currentTime').innerText = formatted;
+}
+
+
+  </script>
+  
+  
+</body>
+</html>
